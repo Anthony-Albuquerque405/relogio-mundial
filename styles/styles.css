@@ -18,7 +18,8 @@ body.dark {
 .conteiner-theme {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
@@ -44,6 +45,18 @@ body.dark {
   transition: background-color 0.3s;
 }
 
+#language-selector {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  transition: background-color 0.3s;
+}
+
+#language-selector:hover,
 #toggle-format:hover,
 #toggle-theme:hover {
   background-color: #0056b3;
