@@ -58,14 +58,22 @@ document.body.classList.add("light");
 
 const toggleButton = document.getElementById("toggle-theme");
 
+toggleButton.textContent = document.body.classList.contains("dark")
+  ? "☀️ Tema Claro"
+  : "🌙 Tema Escuro";
+
 toggleButton.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
 
-  // Muda o ícone do botão
-  if (document.body.classList.contains("dark")) {
-    toggleButton.textContent = "☀️ Alternar Tema"; // Ícone para modo claro
-  } else {
-    toggleButton.textContent = "🌙 Alternar Tema"; // Ícone para modo escuro
-  }
+  // Atualiza ícone
+  toggleButton.textContent = document.body.classList.contains("dark")
+    ? "☀️ Tema Claro"
+    : "🌙 Tema Escuro";
+
+  // Salva tema atual
+  const currentTheme = document.body.classList.contains("dark")
+    ? "dark"
+    : "light";
+  localStorage.setItem("theme", currentTheme);
 });
